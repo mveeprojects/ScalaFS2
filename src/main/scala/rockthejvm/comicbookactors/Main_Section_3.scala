@@ -1,7 +1,7 @@
 package rockthejvm.comicbookactors
 
 import cats.effect.{ExitCode, IO, IOApp}
-import fs2.{Pure, Stream}
+import fs2.{Pipe, Pure, Stream}
 import rockthejvm.comicbookactors.Main_Section_2.{avengersActors, jlActors}
 import rockthejvm.comicbookactors.Model.Actor
 
@@ -35,10 +35,24 @@ object Main_Section_3 extends IOApp {
       map + (actor.firstName -> (actor :: map.getOrElse(actor.firstName, Nil)))
     }
 
+  // Pipe is a type alias for the function Stream[F, I] => Stream[F, O].
+  // So, a Pipe[F[_], I, O] represents nothing more than a function between two streams,
+  // the first emitting elements of type I, and the second emitting elements of type O.
+  // The through method applies a pipe to a stream.
+  val fromActorToStringPipe: Pipe[IO, Actor, String] = in =>
+    in.map(actor => s"${actor.firstName} ${actor.lastName}")
+  def toConsole[String]: Pipe[IO, String, Unit] = in =>
+    in.evalMap(IO.println)
+  val stringNamesOfJLActors: Stream[IO, Unit] =
+    jlActors
+      .through(fromActorToStringPipe)
+      .through(toConsole)
+
   override def run(args: List[String]): IO[ExitCode] = {
 //    printedJLActors.compile.drain.as(ExitCode.Success)
 //    evalMappedJLActors.compile.drain.as(ExitCode.Success)
-    evalTappedJLActors.compile.drain.as(ExitCode.Success)
+//    evalTappedJLActors.compile.drain.as(ExitCode.Success)
+    stringNamesOfJLActors.compile.drain.as(ExitCode.Success)
   }
 
 }
