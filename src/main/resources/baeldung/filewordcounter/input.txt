@@ -1,0 +1,8 @@
+-- Source --
+We can think of a Source as the starting or entry point of our stream with one open output that is responsible for incrementally fetching data from anything ranging from a file, database, or socket. It can comprise any number of internal sources and transformations that are wired together.
+
+-- Pipe --
+A Pipe is a streaming element with open input and output. It is used as a processing step to transform data typically gotten from a Source. It can consist of a single or multiple processing steps.
+
+-- Sink --
+A Sink can be thought of as a stream processing element that mostly represents the end of a stream. It is typically where effectful operations are performed such as writing to a file, database, or socket, or printing to a console.
