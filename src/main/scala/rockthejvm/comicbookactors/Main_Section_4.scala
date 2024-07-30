@@ -31,8 +31,12 @@ object Main_Section_4 extends IOApp {
       case Right(id)   => IO.println(s"Saved actor with id: $id")
     }.compile.drain.as(ExitCode.Success)
 
+  // TODO: Revisit the subject/question below.
   // Could you combine the use of evalTap and handling in some way to prevent the stream ending,
   // but logging the problematic cases out via the tap?
+  // Throwing is impure so probably best to log within the function being called in evalMap etc
+  // and then return a valid value, as opposed to throwing an exception to the stream.
+  // Possibly related: https://stackoverflow.com/questions/48749960/fs2-stream-exception-handling-not-working
 }
 
 object ActorRepository {
