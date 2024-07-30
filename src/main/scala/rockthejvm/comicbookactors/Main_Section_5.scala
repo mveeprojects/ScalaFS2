@@ -4,7 +4,7 @@ import cats.effect.{ExitCode, IO, IOApp}
 import fs2.Stream
 import rockthejvm.comicbookactors.Main_Section_4.savedJLActors
 
-// https://blog.rockthejvm.com/fs2/
+// https://blog.rockthejvm.com/fs2/#5-resource-management
 
 object Main_Section_5 extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {

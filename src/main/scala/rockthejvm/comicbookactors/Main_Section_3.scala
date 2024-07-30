@@ -5,7 +5,7 @@ import fs2.{Pipe, Pure, Stream}
 import rockthejvm.comicbookactors.Main_Section_2.{avengersActors, jlActors}
 import rockthejvm.comicbookactors.Model.Actor
 
-// https://blog.rockthejvm.com/fs2/
+// https://blog.rockthejvm.com/fs2/#3-transforming-a-stream
 
 object Main_Section_3 extends IOApp {
 

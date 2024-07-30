@@ -6,7 +6,7 @@ import rockthejvm.comicbookactors.Data._
 import rockthejvm.comicbookactors.Main_Section_2.avengersActors
 import rockthejvm.comicbookactors.Model.Actor
 
-// https://blog.rockthejvm.com/fs2/
+// https://blog.rockthejvm.com/fs2/#6-the-pull-type
 
 object Main_Section_6 extends IOApp {
 

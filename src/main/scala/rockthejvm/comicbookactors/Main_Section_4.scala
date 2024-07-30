@@ -7,7 +7,7 @@ import rockthejvm.comicbookactors.Model.Actor
 
 import scala.util.Random
 
-// https://blog.rockthejvm.com/fs2/
+// https://blog.rockthejvm.com/fs2/#4-error-handling-in-streams
 
 object Main_Section_4 extends IOApp {
 

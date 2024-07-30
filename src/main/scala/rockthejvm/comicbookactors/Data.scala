@@ -2,6 +2,8 @@ package rockthejvm.comicbookactors
 
 import Model.Actor
 
+// https://blog.rockthejvm.com/fs2/#1-set-up
+
 object Data {
   // Justice League
   val henryCavil: Actor = Actor(0, "Henry", "Cavill")

@@ -5,7 +5,7 @@ import fs2.{Chunk, Pure, Stream}
 import rockthejvm.comicbookactors.Data._
 import rockthejvm.comicbookactors.Model.Actor
 
-// https://blog.rockthejvm.com/fs2/
+// https://blog.rockthejvm.com/fs2/#2-building-a-stream
 // https://www.baeldung.com/scala/variances
 
 object Main_Section_2 extends IOApp {
